@@ -39,18 +39,53 @@ WNEURA, "Mimar (C#) ve İnşaatçı (Python)" modeline göre tasarlanmıştır. 
 WNEURA motorunu dışarıdan (Terminal veya WSharp içinden) çağırmak için `runner.py` kullanılır.
 
 ### 1. Komut Satırı (CLI) Komutu
+
 ```powershell
 py runner.py --steps 100 --erosion 0.05 --stress_threshold 0.7 --output result.json
-2. ParametrelerArgümanVarsayılanAçıklama--steps100Simülasyonun kaç adım süreceği.--erosion0.05İradenin zamanla aşınma hızı (Entropy).--repair0.01Başarılı eylem sonrası irade tamiri.--stress_threshold0.6Kortizolün tetiklendiği eşik.--outputresult.jsonSonucun yazılacağı dosya yolu.📊 Output Protocol (JSON Çıktısı)Motor işini bitirdiğinde, entegre olduğu sisteme (WSharp) şu formatta bir rapor sunar:JSON{
+2. ParametrelerArgümanVarsayılanAçıklama--steps100Simülasyonun kaç adım süreceği.--erosion0.05İradenin zamanla aşınma hızı (Entropy).--repair0.01Başarılı eylem sonrası irade tamiri.--stress_threshold0.6Kortizolün tetiklendiği eşik.--outputresult.jsonSonucun yazılacağı dosya yolu.
+```
+
+📊 Output Protocol (JSON Çıktısı)Motor işini bitirdiğinde, entegre olduğu sisteme (WSharp) şu formatta bir rapor sunar:
+```
+{
     "status": "success",
     "final_stats": {
         "final_agency": 0.0,
         "final_cortisol": 1.0
     },
     "timeline": {
-        "cortisol": [0.2, 0.5, 0.8, 1.0...],
-        "agency": [1.0, 0.8, 0.4, 0.0...],
-        "action": [1, 1, 0, 0...]
+        "cortisol": [0.2, 0.5, 0.8, 1.0],
+        "agency": [1.0, 0.8, 0.4, 0.0],
+        "action": [1, 1, 0, 0]
     }
-}
-Agency 0.0: Öğrenilmiş çaresizlik (Pes etme).Action 0: Donma tepkisi (Freezing).🔬 Validation Experiments (Bilimsel Kanıtlar)Modelin biyolojik doğruluğu aşağıdaki üç deneyle kanıtlanmıştır:1. Hysteresis Proof (Kalıcı Hasar)Stres (Kortizol) ortadan kalksa bile, Agency (İrade) seviyesinin kendiliğinden düzelmediği kanıtlanmıştır.Gözlem: Travma sonrası sistem "Çaresizlik" modunda kilitli kalır.2. Uncertainty vs. Helplessness (Ayrışma)Kaotik bir ortamda bile sağlıklı bir beyin öğrenmeye devam ederken, çaresiz bir beynin stabil ortamda bile "Donma" (Freezing) yaşadığı izlenmiştir.3. Contingency Switch (Fırsat Körlüğü)En kritik deneydir. Ortama devasa bir ödül (+10) eklendiğinde bile, çaresiz ajanın bu fırsatı fark edip motivasyonunu güncelleyemediği (Outcome Insensitivity) görülmüştür.📈 Experimental Results (Grafikler)Deney sonuçları results/ klasöründe yer almaktadır.DeneyGörsel ReferansDurumHysteresisresults/figure_01_hysteresis.png✅ BaşarılıDissociationresults/figure_02_dissociation.png✅ BaşarılıContingencyresults/figure_03_contingency.png✅ Başarılı🚀 Future Roadmap (Vizyon)[x] Phase 1: Core Engine & Validation (Tamamlandı).[x] Phase 2: Headless Architecture & JSON Bridge (Tamamlandı).[ ] Phase 3: WSharp (C#) tam entegrasyonu ve Arayüz.[ ] Phase 4: Çoklu ajan etkileşimi (Sosyal Çaresizlik).[ ] Phase 5: Gerçek zamanlı borsa/veri akışları ile stres testi.🛡️ LicenseBu proje MIT License ile korunmaktadır. Bilimsel amaçlarla kullanılabilir ve geliştirilebilir.Developer: [Efeatagul]
+```
+Agency 0.0: Öğrenilmiş çaresizlik (Pes etme).
+Action 0: Donma tepkisi (Freezing)
+
+.🔬 Validation Experiments (Bilimsel Kanıtlar)
+Modelin biyolojik doğruluğu aşağıdaki üç deneyle kanıtlanmıştır
+1. Hysteresis Proof (Kalıcı Hasar)Stres (Kortizol) ortadan kalksa bile, Agency (İrade) seviyesinin kendiliğinden düzelmediği kanıtlanmıştır.
+```
+        Gözlem: Travma sonrası sistem "Çaresizlik" modunda kilitli kalır
+```
+2. Uncertainty vs. Helplessness (Ayrışma)Kaotik bir ortamda bile sağlıklı bir beyin öğrenmeye devam ederken, çaresiz bir beynin stabil ortamda bile "Donma" (Freezing) yaşadığı izlenmiştir.
+
+3. Contingency Switch (Fırsat Körlüğü)En kritik deneydir. Ortama devasa bir ödül (+10) eklendiğinde bile, çaresiz ajanın bu fırsatı fark edip motivasyonunu güncelleyemediği (Outcome Insensitivity) görülmüştür
+
+.📈 Experimental Results (Grafikler)
+Deney sonuçları results/ klasöründe yer almaktadır.
+```
+Deney	      | Görsel Referans                      |	Durum
+Hysteresis    | results/figure_01_hysteresis.png     |  Başarılı ✅
+Dissociation  | results/figure_02_dissociation.png   |  Başarılı ✅
+Contingency   | results/figure_03_contingency.png    |  Başarılı ✅
+```
+ Future Roadmap (Vizyon)
+ [x] Phase 1: Core Engine & Validation (Tamamlandı)
+ [x] Phase 2: Headless Architecture & JSON Bridge (Tamamlandı)
+ [ ] Phase 3: WSharp (C#) tam entegrasyonu ve Arayüz.
+ [ ] Phase 4: Çoklu ajan etkileşimi (Sosyal Çaresizlik).
+ [ ] Phase 5: Gerçek zamanlı borsa/veri akışları ile stres testi.
+ 
+ 🛡️ LicenseBu proje MIT License ile korunmaktadır. Bilimsel amaçlarla kullanılabilir ve geliştirilebilir.
+Developer: [Efeatagul]
