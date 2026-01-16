@@ -72,6 +72,10 @@ Modelin biyolojik doğruluğu aşağıdaki üç deneyle kanıtlanmıştır
 
 3. Contingency Switch (Fırsat Körlüğü)En kritik deneydir. Ortama devasa bir ödül (+10) eklendiğinde bile, çaresiz ajanın bu fırsatı fark edip motivasyonunu güncelleyemediği (Outcome Insensitivity) görülmüştür
 
+ 4. Therapy & Rehabilitation (Terapi Simülasyonu)
+Travma sonrası iyileşme sürecinin (Recovery) dinamikleri `therapy.py` ile test edilmiştir.
+> **Gözlem:** İradesi sıfırlanmış (Agency=0) bir ajana sürekli ödül verilse dahi, standart onarım hızında (Repair Rate: 0.01) iyileşme görülmemiştir. Ancak dış destekle onarım hızı artırıldığında (0.05) sistemin yavaşça tepki verdiği kanıtlanmıştır.
+
 .📈 Experimental Results (Grafikler)
 Deney sonuçları results/ klasöründe yer almaktadır.
 ```
@@ -79,6 +83,7 @@ Deney	      | Görsel Referans                      |	Durum
 Hysteresis    | results/figure_01_hysteresis.png     |  Başarılı ✅
 Dissociation  | results/figure_02_dissociation.png   |  Başarılı ✅
 Contingency   | results/figure_03_contingency.png    |  Başarılı ✅
+Therapy       | therapy.py (Terminal Log)            |  Başarılı ✅
 ```
  Future Roadmap (Vizyon)
  [x] Phase 1: Core Engine & Validation (Tamamlandı)
