@@ -1,7 +1,7 @@
 # 🧠 WNEURA v1.2: Multi-Dimensional Cognitive Simulation Platform
 
 ![WSharp](https://img.shields.io/badge/WSharp-Native_Architecture-%23512BD4?style=for-the-badge&logo=c-sharp&logoColor=white)
-![Python](https://img.shields.io/badge/Python-100%25-blue?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-Engine_Backend-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Phase%202%20Ready-success?style=for-the-badge)
 ![Focus](https://img.shields.io/badge/Focus-Neuroscience%20%26%20Bio--AI-purple?style=for-the-badge)
 
@@ -11,13 +11,13 @@
 
 WNEURA is a neuroscience-focused platform designed to simulate biological brain development, neurochemical balances, and decision-making processes within a multi-dimensional digital environment.
 
-**Version 1.2** introduces a **"Neurochemical Modulation" (Dopamine/Serotonin)** layer and transitions to a **"Headless"** engine architecture, enabling full integration with external software (specifically WSharp) via JSON protocols.
-     
+**Version 1.2** introduces a **"Neurochemical Modulation" (Dopamine/Serotonin)** layer, a **"Hippocampal Memory System"**, and transitions to a **"Headless"** engine architecture, enabling full integration with external software (specifically WSharp) via JSON protocols.
+
 ---
 
 ## 🛠️ Core Engine Architecture
 
-The platform operates through the mathematical integration of two primary layers: **Structural** and **Chemical**.
+The platform operates through the mathematical integration of three primary layers: **Structural**, **Chemical**, and **Memory**.
 
 ### 1. Structural Layer (The Brain)
 | Mechanism | Analog | Function |
@@ -25,6 +25,7 @@ The platform operates through the mathematical integration of two primary layers
 | **Amygdala** | Stress Engine | Generates Cortisol based on prediction errors (Surprise). |
 | **Agency ($W$)** | Volition Weight | Manages the belief in causality between action and outcome. |
 | **Striatum** | Learning Gate | Stops learning (Freezing) if Agency is too low, even if a reward is present. |
+| **Hippocampus** | Memory Center | **New:** Stores memories based on emotional weight (Synaptic Tagging). |
 
 ### 2. Chemical Layer (Neurochemistry) - *New in v1.2*
 | Neurotransmitter | Domain | Simulation Mechanism |
@@ -41,10 +42,11 @@ The project is organized into core engine components and experimental scenarios:
 
 ```text
 WNEURA/
-├── wneura/                  # Core Package
+├── wneuraa/                 # Core Package (Renamed)
 │   ├── __init__.py          # Package initializer
 │   ├── agent.py             # Neurological Agent (Decision Maker)
 │   ├── brain.py             # Biological Engine (Cortisol/Agency Dynamics)
+│   ├── hippocampus.py       # Memory System (Synaptic Tagging) 🧠
 │   ├── neuromodulator.py    # Chemistry Lab (Dopamine/Receptor) 🧪
 │   ├── config.py            # Hyperparameters
 │   └── runner.py            # CLI & C# Bridge Commander
@@ -55,14 +57,15 @@ WNEURA/
 │
 └── README.md                # Documentation
 ```
-🔌 Integration & Usage
+Integration & Usage
 To trigger the WNEURA engine externally (via Terminal or WSharp), use runner.py.
 
 1. Standard Simulation (CLI)
 ```
-py wneura/runner.py --steps 100 --scenario chaos --output result.json
+py wneuraa/runner.py --steps 100 --scenario chaos --output result.json
 ```
 2. The Grand Experiment (Burnout Lab) 🔥
+To observe Burnout Syndrome, Dopamine tolerance, and the Recovery process live:
 ```
 py experiments/experiment_lab.py
 ```
@@ -72,7 +75,7 @@ Validation Experiments
 The biological accuracy of the model has been proven through four fundamental experiments:
 
 1. Hysteresis Proof (Permanent Damage)
-It has been proven that even if stress (Cortisol) is removed, the Agency level does not recover spontaneously.
+ It has been proven that even if stress (Cortisol) is removed, the Agency level does not recover spontaneously.
 ```
 Observation: Post-trauma, the system remains locked in "Helplessness" mode.
 ```
@@ -89,22 +92,24 @@ Tested via experiments/experiment_lab.py.
 ```
 Observation: During "The Hustle" phase (High Stress + High Reward), although dopamine levels skyrocket, Receptor Sensitivity decreases. Consequently, the agent cannot derive satisfaction even from rewards, eventually leading to Burnout.
 ```
-📈 Experimental Results
+Experimental Results
+Experiment      File / Visual                             Status
 ```
-Experiment      File / Visual                           Status
-Hysteresis	    results/figure_01_hysteresis.png	    Successful ✅
-Dissociation	results/figure_02_dissociation.png	    Successful ✅
-Contingency	    results/figure_03_contingency.png	    Successful ✅
-Therapy Sim	    experiments/therapy.py (Log)	        Successful ✅
-Burnout Lab	    experiments/experiment_lab.py (Live)    Successful ✅
+Hysteresis      results/figure_01_hysteresis.png         Successful ✅
+Dissociation    results/figure_02_dissociation.png       Successful ✅
+Contingency     results/figure_03_contingency.png        Successful ✅
+Therapy Sim     experiments/therapy.py (Log)             Successful ✅
+Burnout Lab     experiments/experiment_lab.py (Live)     Successful ✅
 ```
-🗺️ Future Roadmap
+Future Roadmap
 ```
 [x] Phase 1: Core Engine & Validation (Completed)
 [x] Phase 2: Headless Architecture & JSON Bridge (Completed)
 [x] Phase 2.5: Neurochemistry & Receptor Dynamics (Completed) 🧪
+[x] Phase 2.8: Hippocampal Memory & Tagging (Completed) 🧠
 [ ] Phase 3: Full WSharp (C#) Integration and UI.
-[ ] Phase 4: Multi-Agent Interaction (Social Helplessness).
+[ ] Phase 4: Sleep & Replay (Memory Consolidation).
+[ ] Phase 5: Multi-Agent Interaction (Social Helplessness).
 ```
 Developer: [Efeatagul]
 License: MIT License. Open for scientific use and development.
